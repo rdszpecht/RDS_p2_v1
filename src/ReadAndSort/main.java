@@ -42,7 +42,7 @@ class main{
 
         long elapsedTime = System.currentTimeMillis() - startTime;
 
-        System.out.println("Elapsed time sorting list: " + elapsedTime/1000 + "s;\nNumber of scores: " + sortedScores.length);
+        System.out.println("Elapsed time sorting list: " + (((double) elapsedTime) / 1000.0) + "s;\nNumber of scores: " + sortedScores.length);
 
         try {
             System.out.println("\n Writing result to file (./src/txt/out.txt)...");
@@ -63,11 +63,9 @@ class main{
         String  test = "0";
 
         for (Score s: list){
-            test = s.getName();
             pw.println(s.getName() + ": " + s.getScore());
         }
 
-        System.out.println("test: " + test);
         pw.close();
     }
 
