@@ -20,26 +20,8 @@ class main{
         unsortedScores = InitReader.fileToList(path);
         Score[] sortedScores = new Score[unsortedScores.length];
 
-        System.out.println("¿Wanna <C>oncurrent or <N>ot Concurrent version?");
-        boolean endLoop = false;
-        String version = "";
-        while(!endLoop){
-            version = s.nextLine();
-            version = version.toUpperCase();
-            if((version.equals("C") || version.equals("N"))){
-                endLoop = true;
-            }
-        }
         long startTime = System.currentTimeMillis();
-
-        if(version.equals("C")){
-            System.out.println("Sorting (Concurrent)...");
-            sortedScores = Sorter.concurrentSort(unsortedScores);
-        }else{
-            System.out.println("Sorting (Non-Concurrent)...");
-            sortedScores = Sorter.nonConcurrentSort(unsortedScores);
-        }
-
+        sortedScores = Sorter.concurrentSort(unsortedScores);
         long elapsedTime = System.currentTimeMillis() - startTime;
 
         System.out.println("Elapsed time sorting list: " + (((double) elapsedTime) / 1000.0) + "s;\nNumber of scores: " + sortedScores.length);

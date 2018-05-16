@@ -20,14 +20,6 @@ class Score{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public int compareTo(Score other){
         return Integer.compare(this.score, other.score);
     }
